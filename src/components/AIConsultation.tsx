@@ -339,7 +339,7 @@ export function AIConsultation() {
                 <div className="space-y-4">
                   <div className="relative rounded-xl overflow-hidden">
                     <img
-                      src={selectedImage}
+                      src={selectedImage || ''}
                       alt="Uploaded photo"
                       className="w-full h-64 object-cover"
                     />
