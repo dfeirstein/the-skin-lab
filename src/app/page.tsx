@@ -10,11 +10,11 @@ export default function Home() {
   return (
     <>
       <LuxuryMedicalSpaHero variant="split" />
-      <ServicesOverview />
-      <WhyChooseUs />
-      <AppShowcase />
       <AIConsultation />
       <TestimonialsResults />
+      <WhyChooseUs />
+      <ServicesOverview />
+      <AppShowcase />
       <FloatingLogo />
       {/* Add more sections here */}
     </>
