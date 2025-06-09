@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "WebFetch(domain:platform.openai.com)",
+      "Bash(mkdir:*)"
+    ],
+    "deny": []
+  }
+}
