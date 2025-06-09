@@ -1,9 +1,12 @@
 import { NextRequest } from 'next/server'
 import OpenAI from 'openai'
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
+// Initialize OpenAI client only if API key is available
+const openai = process.env.OPENAI_API_KEY 
+  ? new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    })
+  : null
 
 const SKIN_ANALYSIS_PROMPT = `You are an advanced AI aesthetic advisor for The Skin Lab, a luxury medical spa combining Silicon Valley precision with aesthetic excellence. Analyze this facial image and provide personalized treatment recommendations.
 
@@ -59,6 +62,17 @@ Return the analysis in JSON format with this structure:
 Maintain The Skin Lab's luxury positioning while providing scientific, evidence-based recommendations. Be specific about treatment areas and realistic about timelines.`
 
 export async function POST(request: NextRequest) {
+  // Check if OpenAI client is available
+  if (!openai) {
+    return new Response(
+      JSON.stringify({ error: 'OpenAI API key not configured' }),
+      { 
+        status: 500,
+        headers: { 'Content-Type': 'application/json' }
+      }
+    )
+  }
+
   try {
     const formData = await request.formData()
     const imageFile = formData.get('image') as File
