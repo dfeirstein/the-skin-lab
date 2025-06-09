@@ -135,8 +135,8 @@ const TypographyHero: React.FC = () => {
 const SplitHero: React.FC = () => {
   return (
     <section className="relative bg-background pt-28 md:pt-36">
-      <div className="grid min-h-screen grid-cols-1 md:grid-cols-2">
-        <div className="flex items-center justify-center px-4 py-12 sm:px-6 lg:px-8 xl:px-12">
+      <div className="grid min-h-[calc(100vh-7rem)] md:min-h-[calc(100vh-9rem)] grid-cols-1 md:grid-cols-2">
+        <div className="flex items-center justify-center px-4 py-6 sm:px-6 sm:py-8 md:py-12 lg:px-8 xl:px-12">
           <motion.div 
             initial="hidden"
             animate="visible"
@@ -157,7 +157,7 @@ const SplitHero: React.FC = () => {
             
             <motion.h1 
               variants={fadeInVariants}
-              className="font-playfair mb-6 text-4xl font-medium tracking-tight text-foreground sm:text-5xl"
+              className="font-playfair mb-4 text-3xl font-medium tracking-tight text-foreground sm:text-4xl md:text-5xl"
             >
               <span className="block">Where Science</span>
               <span className="block text-copper-rose">Meets Skin</span>
@@ -165,7 +165,7 @@ const SplitHero: React.FC = () => {
             
             <motion.p 
               variants={fadeInVariants}
-              className="font-inter mb-8 text-lg text-muted-foreground"
+              className="font-inter mb-6 text-base text-muted-foreground sm:text-lg"
             >
               Our advanced treatments combine cutting-edge technology with luxurious care to deliver visible, lasting results for your skin.
             </motion.p>
@@ -184,7 +184,7 @@ const SplitHero: React.FC = () => {
           </motion.div>
         </div>
         
-        <div className="relative">
+        <div className="relative min-h-[300px] sm:min-h-[400px] md:min-h-0">
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="h-full w-full">
               <div className="relative h-full w-full">
@@ -193,12 +193,12 @@ const SplitHero: React.FC = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="rounded-full bg-copper-rose p-4"
+                    className="rounded-full bg-copper-rose p-3 sm:p-4"
                   >
-                    <div className="rounded-full border-2 border-white p-6">
-                      <span className="font-playfair text-xl font-medium text-white">Before</span>
-                      <span className="font-playfair mx-2 text-xl font-medium text-white">/</span>
-                      <span className="font-playfair text-xl font-medium text-white">After</span>
+                    <div className="rounded-full border-2 border-white p-4 sm:p-6">
+                      <span className="font-playfair text-base font-medium text-white sm:text-xl">Before</span>
+                      <span className="font-playfair mx-1 text-base font-medium text-white sm:mx-2 sm:text-xl">/</span>
+                      <span className="font-playfair text-base font-medium text-white sm:text-xl">After</span>
                     </div>
                   </motion.div>
                 </div>
