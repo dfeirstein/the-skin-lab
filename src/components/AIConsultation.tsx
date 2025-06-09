@@ -3,6 +3,7 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
+import confetti from 'canvas-confetti'
 
 interface AnalysisResult {
   skinScore: number
@@ -39,8 +40,10 @@ export function AIConsultation() {
   const [showCamera, setShowCamera] = useState(false)
   const [stream, setStream] = useState<MediaStream | null>(null)
   const [videoReady, setVideoReady] = useState(false)
+  const [showSuccess, setShowSuccess] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const resultsRef = useRef<HTMLDivElement>(null)
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
@@ -53,6 +56,7 @@ export function AIConsultation() {
       reader.readAsDataURL(file)
       setAnalysis(null)
       setError(null)
+      setShowSuccess(false)
     }
   }
 
@@ -61,8 +65,9 @@ export function AIConsultation() {
       const mediaStream = await navigator.mediaDevices.getUserMedia({ 
         video: { 
           facingMode: 'user',
-          width: { ideal: 1280 },
-          height: { ideal: 720 }
+          width: { ideal: 720 },
+          height: { ideal: 1280 },
+          aspectRatio: { ideal: 0.75 }
         } 
       })
       setStream(mediaStream)
@@ -127,6 +132,7 @@ export function AIConsultation() {
               stopCamera()
               setAnalysis(null)
               setError(null)
+              setShowSuccess(false)
             }
           }, 'image/jpeg', 0.9)
         }, 100)
@@ -182,6 +188,31 @@ export function AIConsultation() {
               // Check if we have the final analysis
               if (data.analysis && data.done) {
                 setAnalysis(data.analysis)
+                // Show success state
+                setShowSuccess(true)
+                
+                // Trigger confetti
+                confetti({
+                  particleCount: 100,
+                  spread: 70,
+                  origin: { y: 0.6 },
+                  colors: ['#B87333', '#898B8D', '#FEFEFE', '#F8F6F4']
+                })
+                
+                // Auto scroll to results on mobile
+                setTimeout(() => {
+                  if (window.innerWidth < 768 && resultsRef.current) {
+                    resultsRef.current.scrollIntoView({ 
+                      behavior: 'smooth', 
+                      block: 'start' 
+                    })
+                  }
+                }, 500)
+                
+                // Reset success state after animation
+                setTimeout(() => {
+                  setShowSuccess(false)
+                }, 3000)
               } else if (data.error) {
                 throw new Error(data.error)
               }
@@ -292,18 +323,37 @@ export function AIConsultation() {
                 </div>
               ) : showCamera ? (
                 <div className="space-y-4">
-                  <div className="relative rounded-xl overflow-hidden bg-black">
-                    <video
-                      ref={videoRef}
-                      autoPlay
-                      playsInline
-                      muted
-                      className="w-full h-64 object-cover"
-                    />
+                  <div className="relative rounded-xl overflow-hidden bg-black mx-auto" style={{ maxWidth: '300px' }}>
+                    <div className="relative aspect-[3/4]">
+                      <video
+                        ref={videoRef}
+                        autoPlay
+                        playsInline
+                        muted
+                        className="absolute inset-0 w-full h-full object-cover"
+                        style={{ objectPosition: 'center' }}
+                      />
+                      {/* Face guide overlay */}
+                      <div className="absolute inset-0 pointer-events-none">
+                        <svg className="w-full h-full" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                            <mask id="face-cutout">
+                              <rect width="300" height="400" fill="white"/>
+                              <ellipse cx="150" cy="180" rx="90" ry="110" fill="black"/>
+                            </mask>
+                          </defs>
+                          <rect width="300" height="400" fill="rgba(0,0,0,0.3)" mask="url(#face-cutout)"/>
+                          <ellipse cx="150" cy="180" rx="90" ry="110" fill="none" stroke="rgba(184,115,51,0.8)" strokeWidth="2" strokeDasharray="5,5"/>
+                        </svg>
+                        <div className="absolute top-8 left-0 right-0 text-center">
+                          <p className="text-white text-sm font-medium drop-shadow-lg">Position your face in the oval</p>
+                        </div>
+                      </div>
+                    </div>
                     <canvas ref={canvasRef} className="hidden" />
                     <button
                       onClick={stopCamera}
-                      className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg hover:bg-[#F8F6F4] transition-colors"
+                      className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg hover:bg-[#F8F6F4] transition-colors z-10"
                     >
                       <svg className="w-5 h-5 text-[#2C2C2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -337,17 +387,21 @@ export function AIConsultation() {
                 </div>
               ) : (
                 <div className="space-y-4">
-                  <div className="relative rounded-xl overflow-hidden">
-                    <img
-                      src={selectedImage || ''}
-                      alt="Uploaded photo"
-                      className="w-full h-64 object-cover"
-                    />
+                  <div className="relative rounded-xl overflow-hidden mx-auto" style={{ maxWidth: '300px' }}>
+                    <div className="relative aspect-[3/4]">
+                      <img
+                        src={selectedImage || ''}
+                        alt="Uploaded photo"
+                        className="absolute inset-0 w-full h-full object-cover"
+                        style={{ objectPosition: 'center' }}
+                      />
+                    </div>
                     <button
                       onClick={() => {
                         setSelectedImage(null)
                         setImageFile(null)
                         setAnalysis(null)
+                        setShowSuccess(false)
                         stopCamera()
                       }}
                       className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg hover:bg-[#F8F6F4] transition-colors"
@@ -360,8 +414,12 @@ export function AIConsultation() {
                   
                   <button
                     onClick={analyzeImage}
-                    disabled={isAnalyzing}
-                    className="w-full py-4 bg-[#B87333] text-white rounded-full hover:bg-[#2C2C2C] transition-colors duration-300 font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={isAnalyzing || showSuccess}
+                    className={`w-full py-4 text-white rounded-full transition-all duration-300 font-medium disabled:cursor-not-allowed ${
+                      showSuccess 
+                        ? 'bg-green-500 scale-105' 
+                        : 'bg-[#B87333] hover:bg-[#2C2C2C] disabled:opacity-50'
+                    }`}
                   >
                     {isAnalyzing ? (
                       <span className="flex items-center justify-center">
@@ -371,6 +429,17 @@ export function AIConsultation() {
                         </svg>
                         Analyzing...
                       </span>
+                    ) : showSuccess ? (
+                      <motion.span 
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        className="flex items-center justify-center"
+                      >
+                        <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                        </svg>
+                        Success!
+                      </motion.span>
                     ) : 'Analyze My Skin'}
                   </button>
                 </div>
@@ -411,6 +480,7 @@ export function AIConsultation() {
 
           {/* Results Section */}
           <motion.div
+            ref={resultsRef}
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
