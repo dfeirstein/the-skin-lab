@@ -14,45 +14,45 @@ import {
 const features = [
   {
     icon: Microscope,
-    title: "Science-Backed Treatments",
-    description: "Every procedure is rooted in peer-reviewed research and performed using FDA-approved technologies.",
+    title: "No More Guessing Games",
+    description: "You'll know exactly why we're recommending each treatment—backed by clinical data, not sales quotas.",
     stat: "100%",
-    statLabel: "Evidence-Based"
+    statLabel: "Transparent Pricing"
   },
   {
     icon: Award,
-    title: "Board-Certified Experts",
-    description: "Our medical team brings decades of combined experience in aesthetic medicine and dermatology.",
-    stat: "25+",
-    statLabel: "Years Experience"
+    title: "The Right Hands Matter",
+    description: "Our doctors train other doctors. When it's your face, experience isn't optional—it's everything.",
+    stat: "Zero",
+    statLabel: "Junior Injectors"
   },
   {
     icon: Users,
-    title: "Personalized Approach",
-    description: "Custom treatment plans designed for your unique skin concerns, lifestyle, and aesthetic goals.",
-    stat: "10k+",
-    statLabel: "Happy Clients"
+    title: "Built for Your Schedule",
+    description: "Lunch-hour treatments that actually work. No 2-week downtime surprises or purple bruises before your presentation.",
+    stat: "30 min",
+    statLabel: "Average Visit"
   },
   {
     icon: Clock,
-    title: "Minimal Downtime",
-    description: "Advanced techniques and technologies that fit seamlessly into your busy Silicon Valley lifestyle.",
-    stat: "95%",
-    statLabel: "Same-Day Recovery"
+    title: "Results You Can Track",
+    description: "Monthly progress photos and measurable improvements. You'll see exactly what you're paying for.",
+    stat: "97%",
+    statLabel: "Visible Results"
   },
   {
     icon: Shield,
-    title: "Safety First",
-    description: "Rigorous safety protocols and state-of-the-art sterilization exceed industry standards.",
-    stat: "0",
-    statLabel: "Compromises"
+    title: "Fix It Free Guarantee",
+    description: "Not happy? We'll adjust it at no charge. That's confidence you won't find at discount clinics.",
+    stat: "100%",
+    statLabel: "Satisfaction Promise"
   },
   {
     icon: Sparkles,
-    title: "Luxury Experience",
-    description: "From consultation to aftercare, experience the perfect blend of medical excellence and spa luxury.",
+    title: "Actually Enjoyable",
+    description: "Heated massage tables, noise-canceling headphones, and zero judgment. Self-care should feel good.",
     stat: "5★",
-    statLabel: "Client Rating"
+    statLabel: "Experience Rating"
   }
 ];
 
@@ -101,12 +101,12 @@ export function WhyChooseUs() {
             Why Choose Us
           </span>
           <h2 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-medium text-deep-charcoal mb-6">
-            The Silicon Valley Standard in{" "}
-            <span className="text-copper-rose">Medical Aesthetics</span>
+            Why Pay More When{" "}
+            <span className="text-copper-rose">Cheaper Options Exist?</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Where innovation meets indulgence. Experience the difference of a medical spa 
-            that combines cutting-edge technology with uncompromising luxury.
+            Because fixing bad work costs 3x more than doing it right the first time. 
+            Here's what you're actually paying for:
           </p>
         </motion.div>
 
@@ -166,15 +166,15 @@ export function WhyChooseUs() {
         >
           <div className="inline-flex flex-col items-center">
             <p className="text-lg text-muted-foreground mb-6">
-              Ready to experience the difference?
+              Stop settling for "good enough" skin
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="inline-flex items-center gap-2 bg-copper-rose text-white px-8 py-4 rounded-full hover:bg-copper-rose/90 transition-colors font-medium">
-                Schedule Your Consultation
+                Book My Analysis (Free Today)
                 <Sparkles className="h-5 w-5" />
               </button>
               <button className="inline-flex items-center gap-2 border-2 border-copper-rose text-copper-rose px-8 py-4 rounded-full hover:bg-copper-rose/5 transition-colors font-medium">
-                View Success Stories
+                See Pricing First
               </button>
             </div>
           </div>

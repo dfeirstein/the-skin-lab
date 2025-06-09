@@ -16,34 +16,34 @@ import {
 const services = [
   {
     icon: Sparkles,
-    title: "Injectables & Fillers",
-    description: "Restore volume and smooth fine lines with our premium injectable treatments including Botox, Dysport, and dermal fillers.",
+    title: "I Look Tired All The Time",
+    description: "Erase those under-eye bags and forehead lines that make you look exhausted (even after vacation). Results in 3-5 days.",
     image: "/service-injectables.png",
-    features: ["Botox & Dysport", "Dermal Fillers", "Lip Enhancement", "Liquid Facelift"],
+    features: ["Botox for Crow's Feet", "Under-Eye Fillers", "Brow Lift", "11 Lines"],
     href: "/treatments/injectables"
   },
   {
     icon: Zap,
-    title: "Laser Treatments",
-    description: "Advanced laser technology for skin resurfacing, hair removal, and pigmentation correction with minimal downtime.",
+    title: "My Skin Looks Dull & Uneven",
+    description: "Reveal the glowing skin hiding underneath sun damage, age spots, and acne scars. Your complexion, but 10 years younger.",
     image: "/service-laser.png",
-    features: ["IPL Photofacial", "Laser Hair Removal", "Skin Resurfacing", "Tattoo Removal"],
+    features: ["IPL for Sun Damage", "Laser Resurfacing", "Melasma Treatment", "Pore Refinement"],
     href: "/treatments/laser"
   },
   {
     icon: Heart,
-    title: "Medical Facials",
-    description: "Clinical-grade facials combining luxury with science for deep cleansing, hydration, and skin rejuvenation.",
+    title: "Nothing I Buy Actually Works",
+    description: "Stop wasting money on products. Get clinical treatments that penetrate deeper and deliver visible results you can't get at home.",
     image: "/service-facials.png",
-    features: ["HydraFacial", "Chemical Peels", "Microneedling", "LED Therapy"],
+    features: ["HydraFacial Deep Clean", "Medical Peels", "Collagen Induction", "Custom Protocols"],
     href: "/treatments/facials"
   },
   {
     icon: Shield,
-    title: "Body Contouring",
-    description: "Non-invasive body sculpting treatments to eliminate stubborn fat and tighten skin without surgery.",
+    title: "Exercise Isn't Fixing These Areas",
+    description: "Target the stubborn fat that won't budge—no matter how many Barry's classes you take. See results in 8-12 weeks.",
     image: "/service-body.png",
-    features: ["CoolSculpting", "Skin Tightening", "Cellulite Reduction", "Muscle Toning"],
+    features: ["Fat Freezing", "Skin Tightening", "Cellulite Smoothing", "Muscle Definition"],
     href: "/treatments/body"
   }
 ];
@@ -87,12 +87,12 @@ export function ServicesOverview() {
             Our Services
           </span>
           <h2 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-medium text-deep-charcoal mb-6">
-            Advanced Treatments,{" "}
-            <span className="text-copper-rose">Exceptional Results</span>
+            Tell Us What Bothers You.{" "}
+            <span className="text-copper-rose">We'll Fix It.</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Discover our comprehensive range of medical-grade aesthetic treatments, 
-            each designed to enhance your natural beauty with precision and care.
+            From "I look tired" to "Is that really me in photos?"—we have the exact treatment 
+            to solve your specific concern. No package deals. No upselling. Just solutions.
           </p>
         </motion.div>
 
@@ -159,7 +159,7 @@ export function ServicesOverview() {
 
                     {/* CTA */}
                     <div className="flex items-center text-copper-rose font-medium group-hover:gap-3 transition-all">
-                      <span>Learn More</span>
+                      <span>Fix This Now</span>
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
@@ -184,7 +184,7 @@ export function ServicesOverview() {
             href="/treatments"
             className="inline-flex items-center gap-2 bg-copper-rose text-white px-8 py-4 rounded-full hover:bg-copper-rose/90 transition-colors font-medium"
           >
-            View All Treatments
+            See All Solutions
             <ArrowRight className="h-5 w-5" />
           </Link>
         </motion.div>

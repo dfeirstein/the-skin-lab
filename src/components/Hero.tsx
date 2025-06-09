@@ -151,7 +151,7 @@ const SplitHero: React.FC = () => {
           >
             <motion.div variants={fadeInVariants} className="mb-4">
               <span className="inline-flex items-center rounded-full border border-copper-rose/30 bg-copper-rose/5 px-3 py-1 text-xs font-medium text-copper-rose">
-                Transformative Results
+                97% See Results in 30 Days
               </span>
             </motion.div>
             
@@ -159,15 +159,15 @@ const SplitHero: React.FC = () => {
               variants={fadeInVariants}
               className="font-playfair mb-4 text-3xl font-medium tracking-tight text-foreground sm:text-4xl md:text-5xl"
             >
-              <span className="block">Where Science</span>
-              <span className="block text-copper-rose">Meets Skin</span>
+              <span className="block">You Look Tired</span>
+              <span className="block text-copper-rose">(Even When You're Not)</span>
             </motion.h1>
             
             <motion.p 
               variants={fadeInVariants}
               className="font-inter mb-6 text-base text-muted-foreground sm:text-lg"
             >
-              Our advanced treatments combine cutting-edge technology with luxurious care to deliver visible, lasting results for your skin.
+              Those Zoom calls aren't lying. But in 30 days, you could look as energized as you feel—with personalized treatments that actually work for your skin.
             </motion.p>
             
             <motion.div 
@@ -175,10 +175,10 @@ const SplitHero: React.FC = () => {
               className="flex flex-col gap-4 sm:flex-row"
             >
               <Button size="lg" className="bg-copper-rose text-white hover:bg-copper-rose/90">
-                Book Consultation
+                Get My Skin Analysis →
               </Button>
               <Button variant="outline" size="lg">
-                View Before & After
+                See Real Results
               </Button>
             </motion.div>
           </motion.div>

@@ -251,7 +251,7 @@ export function AIConsultation() {
             transition={{ duration: 0.6 }}
             className="text-4xl md:text-5xl font-playfair text-[#2C2C2C] mb-4"
           >
-            Experience Your AI Skin Analysis
+            Stop Guessing What Your Skin Needs
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -259,7 +259,7 @@ export function AIConsultation() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-xl text-[#898B8D] max-w-2xl mx-auto"
           >
-            Get personalized treatment recommendations powered by advanced AI technology
+            In 60 seconds, discover exactly what's happening beneath the surface—and the precise treatments that will transform your skin
           </motion.p>
         </div>
 
@@ -273,7 +273,7 @@ export function AIConsultation() {
           >
             <div className="bg-white rounded-2xl shadow-xl p-8">
               <h3 className="text-2xl font-playfair text-[#2C2C2C] mb-6">
-                Upload Your Photo
+                Start Your Analysis
               </h3>
               
               {!selectedImage && !showCamera ? (
@@ -283,8 +283,8 @@ export function AIConsultation() {
                       <svg className="w-12 h-12 mx-auto mb-3 text-[#B87333]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
-                      <p className="text-[#2C2C2C] font-medium mb-1">Upload from device</p>
-                      <p className="text-sm text-[#898B8D]">Choose a photo from your files</p>
+                      <p className="text-[#2C2C2C] font-medium mb-1">Choose a selfie</p>
+                      <p className="text-sm text-[#898B8D]">We'll analyze it instantly</p>
                     </div>
                     <input
                       type="file"
@@ -311,13 +311,13 @@ export function AIConsultation() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <p className="text-[#2C2C2C] font-medium mb-1">Take a photo</p>
-                    <p className="text-sm text-[#898B8D]">Use your device camera</p>
+                    <p className="text-[#2C2C2C] font-medium mb-1">Take a fresh photo</p>
+                    <p className="text-sm text-[#898B8D]">Get the most accurate analysis</p>
                   </button>
 
                   <div className="mt-4 flex items-center justify-center gap-2">
                     <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gradient-to-r from-purple-100 to-indigo-100 text-indigo-800">
-                      Powered by OpenAI o3
+                      Medical-Grade AI Analysis
                     </span>
                   </div>
                 </div>
@@ -440,7 +440,7 @@ export function AIConsultation() {
                         </svg>
                         Success!
                       </motion.span>
-                    ) : 'Analyze My Skin'}
+                    ) : 'Get My Personalized Plan →'}
                   </button>
                 </div>
               )}
@@ -454,25 +454,25 @@ export function AIConsultation() {
 
             {/* Info Box */}
             <div className="bg-[#F8F6F4] rounded-2xl p-6">
-              <h4 className="font-medium text-[#2C2C2C] mb-3">How It Works</h4>
+              <h4 className="font-medium text-[#2C2C2C] mb-3">What You'll Discover</h4>
               <ul className="space-y-2 text-sm text-[#898B8D]">
                 <li className="flex items-start">
                   <svg className="w-5 h-5 mr-2 text-[#B87333] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  Upload a clear, front-facing photo
+                  Your exact skin type and concerns
                 </li>
                 <li className="flex items-start">
                   <svg className="w-5 h-5 mr-2 text-[#B87333] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  Our AI analyzes your skin concerns
+                  Which treatments will work for YOU
                 </li>
                 <li className="flex items-start">
                   <svg className="w-5 h-5 mr-2 text-[#B87333] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  Receive personalized treatment recommendations
+                  Your 30-day transformation timeline
                 </li>
               </ul>
             </div>
@@ -498,7 +498,7 @@ export function AIConsultation() {
                     <svg className="w-24 h-24 mx-auto mb-6 text-[#B87333] opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                     </svg>
-                    <p className="text-[#898B8D] text-lg">Your personalized analysis will appear here</p>
+                    <p className="text-[#898B8D] text-lg">Your custom treatment plan will appear here in seconds</p>
                   </div>
                 </motion.div>
               ) : (
@@ -590,7 +590,7 @@ export function AIConsultation() {
 
                   {/* CTA */}
                   <button className="w-full py-4 bg-[#B87333] text-white rounded-full hover:bg-[#2C2C2C] transition-colors duration-300 font-medium">
-                    Book Your Consultation
+                    Start My Transformation Now →
                   </button>
                 </motion.div>
               )}

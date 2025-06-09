@@ -7,27 +7,27 @@ import { motion, AnimatePresence } from 'framer-motion'
 const appFeatures = [
   {
     id: 'analysis',
-    title: 'AI Skin Analysis',
-    subtitle: 'Personalized insights in seconds',
-    description: 'Our advanced AI technology analyzes your skin with clinical precision, providing personalized recommendations tailored to your unique needs.',
+    title: 'Finally Know What Works',
+    subtitle: 'Your skin decoded in 60 seconds',
+    description: 'Stop buying random products. Get a clinical-grade analysis that tells you exactly what your skin needs—and what to avoid.',
     image: '/Create_iPhone_app_mockup_screens_for_The_Skin_Lab-1749423148968.png',
-    features: ['Face scanning technology', 'Instant skin assessment', 'Personalized treatment plans']
+    features: ['See beneath the surface', 'Get your skin score', 'Know exactly what to treat']
   },
   {
     id: 'booking',
-    title: 'Seamless Scheduling',
-    subtitle: 'Book appointments effortlessly',
-    description: 'Schedule your treatments with just a few taps. Get reminders, manage appointments, and sync with your calendar automatically.',
+    title: 'Book During Your Commute',
+    subtitle: 'Appointments that fit your life',
+    description: 'Grab a lunch-hour slot or after-work appointment in 10 seconds. No phone calls. No hold music. Just tap and done.',
     image: '/Create_iPhone_app_mockup_showing_appointment_sched-1749423157974.png',
-    features: ['One-tap booking', 'Smart reminders', 'Calendar integration']
+    features: ['See real-time availability', 'Instant confirmations', 'Change or cancel anytime']
   },
   {
     id: 'tracking',
-    title: 'Progress Tracking',
-    subtitle: 'Monitor your skin transformation',
-    description: 'Track your skincare journey with detailed progress reports. See real results with before/after comparisons and treatment history.',
+    title: 'Watch Yourself Get Younger',
+    subtitle: 'Your transformation, documented',
+    description: 'Monthly progress photos show you exactly how your treatments are working. No more guessing—see the proof.',
     image: '/Create_iPhone_app_mockup_showing_personalized_regi-1749423164707.png',
-    features: ['Treatment history', 'Progress analytics', 'Custom protocols']
+    features: ['Side-by-side comparisons', 'Track improvements', 'Share with friends']
   }
 ]
 
@@ -45,7 +45,7 @@ export function AppShowcase() {
             transition={{ duration: 0.6 }}
             className="text-4xl md:text-5xl font-playfair text-[#2C2C2C] mb-4"
           >
-            Experience The Future of Skincare
+            Never Wonder "Is It Working?" Again
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -53,7 +53,7 @@ export function AppShowcase() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-xl text-[#898B8D] max-w-2xl mx-auto"
           >
-            Our AI-powered app puts clinical-grade skin analysis and personalized care at your fingertips
+            Track your transformation with monthly progress photos, book appointments in seconds, and get instant answers to your skin questions
           </motion.p>
         </div>
 
@@ -131,7 +131,7 @@ export function AppShowcase() {
           className="text-center mt-16"
         >
           <p className="text-lg text-[#898B8D] mb-6">
-            Download the app and start your personalized skincare journey today
+            Join 10,000+ users who stopped guessing and started seeing results
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-8 py-4 bg-[#2C2C2C] text-white rounded-full hover:bg-[#B87333] transition-colors duration-300 flex items-center justify-center gap-3">

@@ -97,12 +97,12 @@ export function TestimonialsResults() {
             Real Results
           </span>
           <h2 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-medium text-deep-charcoal mb-6">
-            Transformations That{" "}
-            <span className="text-copper-rose">Speak for Themselves</span>
+            They Got Their Confidence Back in{" "}
+            <span className="text-copper-rose">30 Days or Less</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Join thousands of satisfied clients who've discovered their best skin at The Skin Lab. 
-            Our results are backed by science and proven by smiles.
+            Real Silicon Valley executives, entrepreneurs, and professionals share their transformation stories. 
+            No filters. No retouching. Just results.
           </p>
         </motion.div>
 
@@ -312,10 +312,10 @@ export function TestimonialsResults() {
           className="text-center mt-16"
         >
           <p className="text-lg text-muted-foreground mb-6">
-            Ready to write your own success story?
+            Stop watching others get results. It's your turn.
           </p>
           <button className="inline-flex items-center gap-2 bg-copper-rose text-white px-8 py-4 rounded-full hover:bg-copper-rose/90 transition-colors font-medium">
-            Start Your Transformation
+            Claim Your Spot Today
             <Calendar className="h-5 w-5" />
           </button>
         </motion.div>
